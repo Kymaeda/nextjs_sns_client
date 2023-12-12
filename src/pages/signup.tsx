@@ -6,6 +6,11 @@ function Signup() {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
+  const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(name, email, password)
+  }
+
   return (
     <div
       style={{ height: '88vh' }}
@@ -21,7 +26,7 @@ function Signup() {
       </div>
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-          <form>
+          <form onSubmit={handleOnSubmit}>
             <div>
               <label
                 htmlFor="email"
@@ -36,6 +41,7 @@ function Signup() {
                 autoComplete="name"
                 required
                 className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 text-base focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
             <div className="mt-6">
@@ -52,6 +58,7 @@ function Signup() {
                 autoComplete="email"
                 required
                 className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 text-base focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="mt-6">
@@ -68,6 +75,7 @@ function Signup() {
                 autoComplete="new-password"
                 required
                 className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 text-base focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <div className="mt-6">
