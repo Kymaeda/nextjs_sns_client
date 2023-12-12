@@ -1,7 +1,11 @@
 import Head from 'next/head';
-import React from 'react';
+import { useState } from 'react';
 
-function signup() {
+function Signup() {
+  const [name, setName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+
   return (
     <div
       style={{ height: '88vh' }}
@@ -81,4 +85,4 @@ function signup() {
   );
 }
 
-export default signup;
+export default Signup;
